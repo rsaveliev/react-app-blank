@@ -1,0 +1,83 @@
+{
+  "name": "react-app-blank",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.jsx",
+  "scripts": {
+    "build": "webpack --mode production --config webpack.prod.js --progress",
+    "prebuild": "npm run clean-build",
+    "clean-build": "rimraf ./build",
+    "start": "webpack serve --mode development --hot --config webpack.dev.js",
+    "watch": "webpack --mode development --config webpack.dev.js --watch",
+    "analyze-bundle": "node analyze-bundle.js",
+    "test": "jest",
+    "test:dev": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "eslint": "eslint --color --ext .js,.jsx src/",
+    "eslint:fix": "eslint --fix --ext .js,.jsx src/"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest",
+      "^.+\\.(css|scss|less)$": "jest-css-modules",
+      "^.+\\.svg$": "jest-svg-transformer"
+    },
+    "globals": {
+      "NODE_ENV": "test"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "<rootDir>/test-config.js"
+    ],
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ]
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "axios": "^0.21.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^10.0.0",
+    "css-loader": "^5.0.0",
+    "html-webpack-plugin": "^4.5.0",
+    "node-sass": "^4.14.1",
+    "redux-devtools-extension": "^2.13.8",
+    "sass-loader": "^10.0.4",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.0.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtyomVolkov/react-app-blank"
+  },
+  "author": "A.Volkov (N-iX)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtyomVolkov/react-app-blank/issues"
+  },
+  "homepage": "https://github.com/ArtyomVolkov/react-app-blank#readme"
+}
