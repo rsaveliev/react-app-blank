@@ -35,7 +35,20 @@ const PLUGINS = [
   new HTMLWebpackPlugin({
     template: __dirname + '/src/index.html',
     filename: 'index.html',
-    inject: 'body'
+    inject: 'body',
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeRedundantAttributes: true,
+      useShortDoctype: true,
+      removeEmptyAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      keepClosingSlash: true,
+      minifyJS: true,
+      minifyCSS: true,
+      minifyURLs: true,
+    },
+    chunksSortMode: 'none',
   }),
 ];
 // CONFIG
@@ -46,10 +59,11 @@ module.exports = {
   ],
   output: {
     filename: 'main.min.js',
-    path: path.resolve(__dirname, 'build')
+    publicPath: '/',
+    path: path.resolve(__dirname, 'build'),
   },
   resolve: {
-    extensions: ['.js', '.scss'],
+    extensions: ['.js', '.jsx', '.scss'],
     modules: [
       path.resolve(__dirname, 'node_modules')
     ]
