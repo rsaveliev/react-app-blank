@@ -16,10 +16,6 @@ export const NAV_ITEMS = [
         path: '/react/lifecycle',
       },
       {
-        title: 'Hooks',
-        path: '/react/hooks',
-      },
-      {
         title: 'StateLess',
         path: '/react/stateless',
       },
@@ -30,6 +26,10 @@ export const NAV_ITEMS = [
       {
         title: 'HOC',
         path: '/react/hoc',
+      },
+      {
+        title: 'Hooks',
+        path: '/react/hooks',
       },
     ]
   },

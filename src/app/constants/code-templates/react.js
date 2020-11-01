@@ -83,7 +83,7 @@ class Updating extends Component {
 }`;
 
 export const Unmounting =
-  `import React from 'react';
+`import React from 'react';
 
 class Updating extends Component {  
   componentWillUnmount () {
@@ -106,8 +106,7 @@ export const LifeCycleComponents = {
 
 
 const useState =
-`// useState();
-import React, { useState } from 'react';
+`import React, { useState } from 'react';
 
 function Counter({ initialCount }) {
   const [count, setCount] = useState(initialCount);
@@ -123,8 +122,7 @@ function Counter({ initialCount }) {
 }`;
 
 const useEffect =
-`// useEffect();
-import React, { useEffect } from 'react';
+`import React, { useEffect } from 'react';
 
 function UseEffect() {
   useEffect(() => {
@@ -146,8 +144,7 @@ function UseEffect() {
 }`;
 
 const useContext =
-`// useContext()
-import React, { useContext } from 'react';
+`import React, { useContext } from 'react';
 
 const themes = {
   light: {
@@ -187,8 +184,164 @@ function ThemedButton() {
   );
 }`;
 
+const useReducer =
+`import React, { useEffect } from 'react';
+
+const initialState = {count: 0};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      return state;
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+    </>
+  );
+}`;
+
+const useCallback =
+`import React, { useCallback } from 'react';
+
+function SomeComponent() {
+  // e.g. shouldComponentUpdate
+  const memoizedCallback = useCallback(() => {
+    // doSomething(a, b);
+  },[a, b]);
+
+  return (
+    <p>
+      SomeComponent
+    </p>
+  );
+}`;
+
+const useMemo =
+`import React, { useMemo } from 'react';
+
+function SomeComponent() {
+  const search = 'J';
+  const users = [{ name: 'John' }, { name: 'Bill' }];
+  
+  const filteredUsers = useMemo(() => (
+    users.filter((user) => {
+      return user.name.toLowerCase().includes(search.toLowerCase());
+    }), [search])
+  );
+     
+  return (
+    <p>
+      {
+        filteredUsers.map(({ name }) => (
+          <p key={name}>{name}</p>
+        ))
+      }
+    </p>
+  );
+}`;
+
+const useRef =
+`import React, { useRef } from 'react';
+
+function TextInputWithFocusButton() {
+  const inputEl = useRef(null);
+
+  const onButtonClick = () => {
+    inputEl.current.focus();
+  };
+
+  return (
+    <div>
+      <input ref={inputEl} type="text" />
+      <button onClick={onButtonClick}>Focus the input</button>
+    </>
+  );
+}`;
+
+const useImperativeHandle =
+`import React, { useRef, useImperativeHandle } from 'react';
+
+function FancyInput(props, ref) {
+  const inputRef = useRef();
+
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      inputRef.current.focus();
+    }
+  }));
+  return <input ref={inputRef} />;
+}
+FancyInput = forwardRef(FancyInput);`;
+
+const useDebugValue =
+`import React, { useDebugValue } from 'react';
+
+function useFriendStatus(friendID) {
+  const [isOnline, setIsOnline] = useState(null);
+
+  // Show a label in DevTools next to this Hook
+  // e.g. "FriendStatus: Online"
+  useDebugValue(isOnline ? 'Online' : 'Offline');
+
+  return isOnline;
+}`;
+
 export const ReactHooks = {
   useState,
   useEffect,
   useContext,
+  useReducer,
+  useCallback,
+  useMemo,
+  useRef,
+  useImperativeHandle,
+  useDebugValue,
+};
+
+export const stateLessComponent =
+`import React from 'react';
+
+const MyStatelessComponent = () => (
+  <div>
+    Hello World!
+  </div>
+);`;
+
+export const stateFullComponent =
+`import React, { Component } from 'react';
+
+class StateFullComponent extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      user: {
+        name: 'Artem'
+      },
+    };
+  }
+
+  render() {
+    const { name } = this.state;
+    
+    return (
+      <p>
+        My name is: {name}
+      </p>
+    );
+  }
 }
+
+export default StateFullComponent;`;
