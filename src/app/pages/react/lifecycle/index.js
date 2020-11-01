@@ -3,12 +3,12 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
+import { Divider } from '@material-ui/core';
 
 import CodeMirror from '../../../components/code-mirror';
 import { LifeCycleComponents } from '../../../constants/code-templates/react';
 
 import './style.scss';
-import { Divider } from '@material-ui/core';
 
 const LifeCycle = () => (
   <section className="lifecycle">
@@ -17,7 +17,8 @@ const LifeCycle = () => (
     </Typography>
     <Typography className="topic" variant="body1" component="section" color="textSecondary">
       Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
-      <br/>
+    </Typography>
+    <Typography variant="body1" component="section" color="primary">
       The three phases are:
       <ul>
         <li>
@@ -36,11 +37,11 @@ const LifeCycle = () => (
         <Card>
           <Typography className="card-title" variant="h6">
             Mounting
-            <Typography color="textSecondary" variant="subtitle1">
-              Mounting phase has four methods, order of invoke:
-            </Typography>
           </Typography>
-          <Typography color="textSecondary">
+          <Typography className="card-title" color="textSecondary" variant="subtitle1">
+            Mounting phase has four methods, order of invoke:
+          </Typography>
+          <Typography variant="body1" color="primary" component="section">
             <ul>
               <li>
                 constructor()
@@ -66,13 +67,13 @@ const LifeCycle = () => (
       <Card>
         <Typography className="card-title" variant="h6">
           Updating
-          <Typography color="textSecondary" variant="subtitle1">
-            A component is updated whenever there is a change in the component's <b>state</b> or <b>props</b>.
-            <br/>
-            Updating phase has five built-in methods that gets called, in this order, when a component is updated:
-          </Typography>
         </Typography>
-        <Typography color="textSecondary">
+        <Typography className="card-title" color="textSecondary" variant="subtitle1">
+          A component is updated whenever there is a change in the component's <b>state</b> or <b>props</b>.
+          <br/>
+          Updating phase has five built-in methods that gets called, in this order, when a component is updated:
+        </Typography>
+        <Typography color="primary" component="section">
           <ul>
             <li>
               getDerivedStateFromProps()
@@ -100,14 +101,14 @@ const LifeCycle = () => (
       <Card>
         <Typography className="card-title" variant="h6">
           Unmounting
-          <Typography color="textSecondary" variant="subtitle1">
-            The last one phase in the lifecycle is when a component is removed from the DOM, or unmounting as React
-            likes to call it.
-            <br/>
-            React has only one built-in method that gets called when a component is unmounted:
-          </Typography>
         </Typography>
-        <Typography color="textSecondary">
+        <Typography className="card-title" color="textSecondary" variant="subtitle1">
+          The last one phase in the lifecycle is when a component is removed from the DOM, or unmounting as React
+          likes to call it.
+          <br/>
+          React has only one built-in method that gets called when a component is unmounted:
+        </Typography>
+        <Typography color="primary" component="section">
           <ul>
             <li>
               componentWillUnmount()

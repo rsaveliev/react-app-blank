@@ -41,6 +41,30 @@ const Intro = () => (
           </CardContent>
         </Card>
       </Grid>
+      <Grid item xs={6}>
+        <Card>
+          <CardContent>
+            <Typography gutterBottom variant="h6" component="h2">
+              Lifecycle of Components
+            </Typography>
+            <Typography variant="body1" color="textSecondary" component="p">
+              Lifecycle methods of components
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item xs={6}>
+        <Card>
+          <CardContent>
+            <Typography gutterBottom variant="h6" component="h2">
+              Hooks
+            </Typography>
+            <Typography variant="body1" color="textSecondary" component="p">
+              Hook types
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
     </Grid>
   </>
 );

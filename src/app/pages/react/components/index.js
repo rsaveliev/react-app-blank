@@ -22,7 +22,7 @@ const ReactComponents = () => (
     <Typography className="topic" variant="body1" component="section" color="textSecondary">
       JSX stands for JavaScript XML. JSX allows us to write HTML in React.
       JSX makes it easier to write and add HTML in React.
-      <br />
+      <br/>
       <Link
         rel="noopener"
         href="https://reactjs.org/docs/introducing-jsx.html"
@@ -40,7 +40,7 @@ const ReactComponents = () => (
     </Typography>
     <Typography className="topic" variant="body1" component="section" color="textSecondary">
       Components come in two types: <b>Class Components</b> and <b>Function Components</b>
-      <br />
+      <br/>
       <Link
         rel="noopener"
         href="https://reactjs.org/docs/components-and-props.html"
@@ -59,8 +59,8 @@ const ReactComponents = () => (
         </Card>
         <Typography className="topic" variant="body1" component="section" color="textSecondary">
           Class component implement a <b>render()</b> method that takes input data and returns what to display.
-          This example uses an XML-like syntax called JSX. Input data that is passed into the component can be accessed by
-          render() via <b>this.props.</b>
+          This example uses an XML-like syntax called JSX. Input data that is passed into the component can be accessed
+          by <b>render()</b> via <b>this.props.</b>
         </Typography>
       </Grid>
       <Grid item xs={12}>
@@ -71,7 +71,8 @@ const ReactComponents = () => (
           <CodeMirror template={FunctionComponent}/>
         </Card>
         <Typography className="topic" variant="body1" component="section" color="textSecondary">
-          A Function component also returns HTML, and behaves pretty much the same way as a Class component, but Class components have some additions.
+          A Function component also returns HTML, and behaves pretty much the same way as a Class component, but Class
+          components have some additions.
         </Typography>
       </Grid>
       <Grid item xs={12}>

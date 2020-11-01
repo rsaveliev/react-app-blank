@@ -103,3 +103,92 @@ export const LifeCycleComponents = {
   updating: Updating,
   unmounting: Unmounting,
 }
+
+
+const useState =
+`// useState();
+import React, { useState } from 'react';
+
+function Counter({ initialCount }) {
+  const [count, setCount] = useState(initialCount);
+
+  return (
+    <>
+      Count: {count}
+      <button onClick={() => setCount(initialCount)}>Reset</button>
+      <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
+      <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
+    </>
+  );
+}`;
+
+const useEffect =
+`// useEffect();
+import React, { useEffect } from 'react';
+
+function UseEffect() {
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log('interval');
+    }, 3000);
+    
+    return () => {
+      // Clean up interval
+      clearInterval(timer);
+    };
+  });
+
+  return (
+    <>
+      <p>Use effect hook</p>
+    </>
+  );
+}`;
+
+const useContext =
+`// useContext()
+import React, { useContext } from 'react';
+
+const themes = {
+  light: {
+    foreground: "#000000",
+    background: "#eeeeee"
+  },
+  dark: {
+    foreground: "#ffffff",
+    background: "#222222"
+  }
+};
+const ThemeContext = React.createContext(themes.light);
+
+function App() {
+  return (
+    <ThemeContext.Provider value={themes.dark}>
+      <Toolbar />
+    </ThemeContext.Provider>
+  );
+}
+
+function Toolbar() {
+  return (
+    <div>
+      <ThemedButton />
+    </div>
+  );
+}
+
+function ThemedButton() {
+  const theme = useContext(ThemeContext);
+
+  return (
+    <button style={{ background: theme.background, color: theme.foreground }}>
+      I am styled by theme context!
+    </button>
+  );
+}`;
+
+export const ReactHooks = {
+  useState,
+  useEffect,
+  useContext,
+}
