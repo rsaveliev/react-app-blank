@@ -342,6 +342,33 @@ class StateFullComponent extends Component {
       </p>
     );
   }
+}`;
+
+export const HOC =
+`import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+class HocExample extends Component {
+  render(){
+    const { users } = this.props;
+
+    return (
+      <ul>
+        {
+          users.map(({ name }) => (
+            <li key={name}>
+              { name }
+            </li>
+          ))
+        }
+      </ul>
+    )
+  }
 }
 
-export default StateFullComponent;`;
+// users from redux-store
+const matStateToProps = ({ users }) => ({
+  users,
+});
+
+export default connect(matStateToProps)(HocExample);`

@@ -1,0 +1,9 @@
+.intro {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto 70px;
+
+  article {
+    margin-bottom: 20px;
+  }
+}

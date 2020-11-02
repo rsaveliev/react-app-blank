@@ -24,53 +24,46 @@ export const NAV_ITEMS = [
         path: '/react/state-full',
       },
       {
-        title: 'HOC',
-        path: '/react/hoc',
-      },
-      {
         title: 'Hooks',
         path: '/react/hooks',
+      },
+      {
+        title: 'HOC',
+        path: '/react/hoc',
       },
     ]
   },
   {
     title: 'React Router',
-    path: 'router',
+    path: '/router',
     subTopics: [
       {
-        title: 'Base'
-      },
-      {
-        title: 'Nested'
+        title: 'Nested',
+        path: '/router/nesting',
       },
     ]
   },
   {
     title: 'Redux',
-    path: 'redux',
+    path: '/redux',
     subTopics: [
       {
-        title: 'Store'
+        title: 'Store',
+        path: '/redux/store',
       },
       {
-        title: 'Actions'
+        title: 'Actions',
+        path: '/redux/actions',
       },
       {
-        title: 'Reducers'
+        title: 'Reducers',
+        path: '/redux/reducers',
       },
     ]
   },
   {
     title: 'App structure',
-    path: 'app-structure',
-    subTopics: [
-      {
-        title: 'Store'
-      },
-      {
-        title: 'Folders structure'
-      },
-    ]
+    path: '/app-structure',
   },
   {
     title: 'Questions',

@@ -28,6 +28,7 @@ const StateLess = () => (
       <Grid item xs={12}>
         <Card>
           <Accordion
+            unmountOnExit
             title={() => (
               <Typography variant="body1" color="textSecondary">
                 SateLess component
