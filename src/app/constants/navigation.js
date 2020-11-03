@@ -66,7 +66,7 @@ export const NAV_ITEMS = [
     path: '/app-structure',
   },
   {
-    title: 'Questions',
-    path: 'questions',
+    title: 'Live example',
+    path: '/live-example',
   }
 ];

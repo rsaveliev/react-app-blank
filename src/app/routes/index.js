@@ -17,6 +17,7 @@ import ReduxStorePage from '../pages/redux/store';
 import ReduxActionsPage from '../pages/redux/actions';
 import ReduxReducersPage from '../pages/redux/reducers';
 import AppStructurePage from '../pages/app-structure';
+import LiveExamplePage from '../pages/live-example';
 
 const Routes = () => {
   return (
@@ -38,6 +39,7 @@ const Routes = () => {
       <Route path="/redux/actions" component={ReduxActionsPage} />
       <Route path="/redux/reducers" component={ReduxReducersPage} />
       <Route path="/app-structure" component={AppStructurePage} />
+      <Route path="/live-example" component={LiveExamplePage} />
       <Route path="*" component={Page404}/>
     </Switch>
   );
